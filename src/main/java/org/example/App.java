@@ -1,6 +1,7 @@
 package org.example;
 import java.util.Scanner;
 import java.math.*;
+import java.text.NumberFormat;
 
 /*
  *  UCF COP3330 Fall 2021 Assignment 1 Exercise 12 Solution
@@ -27,8 +28,8 @@ public class App
         double total = principal*(1+(interest*years));
 
         BigDecimal formatedTotal = new BigDecimal(total).setScale(2, RoundingMode.HALF_UP);
+        NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
 
-
-        System.out.println("After "+stringYears+" years at "+stringRate+"%, the investment will be worth $"+formatedTotal+".");
+        System.out.println("After "+stringYears+" years at "+stringRate+"%, the investment will be worth "+defaultFormat.format(formatedTotal)+".");
     }
 }
